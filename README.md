@@ -22,6 +22,12 @@ The application will be available at `http://localhost:5173`.
 
 ## How to start Storybook
 
+To start Storybook, run:
+
+```bash
+npm run storybook
+```
+
 ## Time spent on the challenge
 
 - 4 hours

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { User } from "../../types";
 import { ProgressSpinner } from "primereact/progressspinner";
 import { Card } from "primereact/card";
+import { Button } from "primereact/button";
 
 export default function UserDetails() {
   const params = useParams();
@@ -11,6 +12,10 @@ export default function UserDetails() {
   const [data, setData] = useState<User | null>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error>();
+
+  const onButtonClick = () => {
+    navigate(`/users`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +54,12 @@ export default function UserDetails() {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <div style={{ display: "flex", flexDirection: "column", width: "500px" }}>
+        <div style={{ paddingBottom: "16px" }}>Error: {error.message}</div>
+        <Button onClick={onButtonClick}>Go back to list</Button>
+      </div>
+    );
   }
 
   return (
