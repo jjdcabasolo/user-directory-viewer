@@ -5,7 +5,7 @@ import UserDetails from "./features/userDetails/userDetails";
 
 function App() {
   return (
-    <div>
+    <div className="card flex flex-column gap-3">
       <Toolbar start={<h1>User Directory Viewer</h1>} />
       <Routes>
         <Route path="/" element={<Navigate to="/users" />} />

@@ -55,15 +55,15 @@ export default function UserDetails() {
 
   if (error) {
     return (
-      <div style={{ display: "flex", flexDirection: "column", width: "500px" }}>
-        <div style={{ paddingBottom: "16px" }}>Error: {error.message}</div>
+      <div className="flex flex-column w-3">
+        <div>Error: {error.message}</div>
         <Button onClick={onButtonClick}>Go back to list</Button>
       </div>
     );
   }
 
   return (
-    <div className="card flex justify-content-center">
+    <div className="card flex flex-column align-items-center gap-3">
       {data && (
         <Card
           title={data.name}
@@ -90,6 +90,9 @@ export default function UserDetails() {
           </div>
         </Card>
       )}
+      <Button onClick={onButtonClick} className="w-25rem">
+        Go back to list
+      </Button>
     </div>
   );
 }
